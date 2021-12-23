@@ -67,8 +67,7 @@ abstract class ApiAbstract
 					'headers' => [
 						'Content-Type' => 'application/json',
 						'Accept' => 'application/json',
-						'Client-Secret' => $this->config->clientSecret,
-						'Access-Token' => $this->config->accessToken
+						'Authorization' => 'Bearer '.$this->config->accessToken
 					]
 				], $parameters)
 	        );
