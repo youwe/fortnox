@@ -31,7 +31,7 @@ class EmployeeApi extends ApiAbstract implements ApiInterface
         $datas = $this->getPaginated('/employees', $request, 'Employees');
         if(is_array($datas)){
         	foreach($datas as $key => $data){
-        		$datas[$key] = new Customer($data);
+        		$datas[$key] = new Employee($data);
         	}
         }
     	return $datas;
@@ -58,7 +58,7 @@ class EmployeeApi extends ApiAbstract implements ApiInterface
     	$request->method = 'POST';
         $data = $this->callJson('/employees', $request, 'Employee');
         if(is_array($data)){
-        	return new Customer($data);
+        	return new Employee($data);
         }
     }
 
