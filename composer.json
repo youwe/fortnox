@@ -1,12 +1,12 @@
 {
-    "name": "hmphu/fortnox",
+    "name": "youwe/fortnox",
     "description": "Fortnox API Implement in PHP",
     "type": "library",
     "license": "GNU",
     "authors": [
         {
-            "name": "Phu Hoang",
-            "email": "me@hmphu.com"
+            "name": "Rob Wiek",
+            "email": "r.wiek@youweagency.com"
         }
     ],
     "require": {
