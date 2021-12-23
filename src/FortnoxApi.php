@@ -37,6 +37,7 @@ class FortnoxApi extends ApiAbstract
 	public $articlefileconnection;
 	public $articlurleconnection;
 	public $invoice;
+    public $employee;
     /**
      * @param FortnoxConfig $config
      */
@@ -51,6 +52,7 @@ class FortnoxApi extends ApiAbstract
         $this->articlefileconnection = new \hmphu\fortnox\api\ArticleFileConnectionApi($config, $https);
         $this->articleurlconnection = new \hmphu\fortnox\api\ArticleUrlConnectionApi($config, $https);
         $this->invoice = new \hmphu\fortnox\api\InvoiceApi($config, $https);
+        $this->employee = new \hmphu\fortnox\api\EmployeeApi($config, $https);
     }
 
     /**
