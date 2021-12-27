@@ -151,7 +151,7 @@ class FortnoxApi extends ApiAbstract
      * @return array
      */
     public function getVouchers($financialYearDate) {
-    	$request = new QueryRequest(['financialyeardate' => $financialYearDate]);
+    	$request = new QueryRequest(['financialyear' => $financialYearDate]);
         return $this->getPaginated('/vouchers', $request, 'Vouchers');
     }
 
@@ -163,7 +163,7 @@ class FortnoxApi extends ApiAbstract
      */
     public function getVoucher($series, $voucherNumber, $financialYearDate) {
         $endpoint = sprintf('/vouchers/%s/%s', $series, $voucherNumber);
-        $request = new QueryRequest(['financialyeardate' => $financialYearDate]);
+        $request = new QueryRequest(['financialyear' => $financialYearDate]);
         return $this->callJson($endpoint, $request, 'Voucher');
     }
 
