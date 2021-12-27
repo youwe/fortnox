@@ -154,7 +154,8 @@ class FortnoxApi extends ApiAbstract
      * @return array
      */
     public function getVouchers($financialYearDate, $page = 0, $limit = 10) {
-        $request = new PaginatedRequest($page, $limit, ['financialyear' => $financialYearDate]);
+        //$request = new PaginatedRequest($page, $limit, ['financialyear' => $financialYearDate]);
+        $request = new QueryRequest(['financialyear' => $financialYearDate]);
         return $this->getPaginated('/vouchers', $request, 'Vouchers');
     }
 
