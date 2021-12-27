@@ -11,6 +11,7 @@ namespace hmphu\fortnox;
 use hmphu\fortnox\api\ApiAbstract;
 use hmphu\fortnox\request\BasicRequest;
 use hmphu\fortnox\request\CustomerRequest;
+use hmphu\fortnox\request\PaginatedRequest;
 use hmphu\fortnox\request\SupplierRequest;
 use hmphu\fortnox\request\FileRequest;
 use hmphu\fortnox\request\SupplierInvoiceFileConnectionRequest;
@@ -146,12 +147,14 @@ class FortnoxApi extends ApiAbstract
         return $this->callJson('/supplierinvoices/' . $id, $request, 'SupplierInvoice');
     }
 
-     /**
-     * @param string $financialYearDate date of the financial year to use (Y-m-d)
+    /**
+     * @param $page
+     * @param $limit
+     * @param $financialYearDate
      * @return array
      */
-    public function getVouchers($financialYearDate) {
-    	$request = new QueryRequest(['financialyear' => $financialYearDate]);
+    public function getVouchers($financialYearDate, $page = 0, $limit = 10) {
+        $request = new PaginatedRequest($page, $limit, ['financialyear' => $financialYearDate]);
         return $this->getPaginated('/vouchers', $request, 'Vouchers');
     }
 
